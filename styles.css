@@ -1,0 +1,291 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1e1e2e, #2a2a3a);
+    color: #eee;
+    line-height: 1.6;
+}
+
+/* Top Banner with Name (Ensuring Visibility) */
+.top-banner {
+    background: linear-gradient(135deg, #ff007f, #7f00ff);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1100;  /* Ensure it stays above navbar */
+    width: 100%;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(135deg, #ff007f, #7f00ff);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 60px; /* Moves navbar below top-banner */
+    z-index: 1000;
+    transition: 0.4s ease-in-out;
+}
+
+header:hover {
+    background: linear-gradient(135deg, #00d4ff, #00ffa3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section (Prevent Overlap with Navbar) */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    margin-top: 120px; /* Ensures navbar doesn't overlap */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 15px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff007f;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Section Layout */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+/* About Section */
+#about {
+    background: #262626;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Experience Section */
+#experience {
+    background: #2b2b2b;
+    padding: 60px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.experience-card h3 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.experience-card ul {
+    margin-left: 20px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #333;
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-list div {
+    background: #444;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.skills-list div:hover {
+    transform: scale(1.1);
+    background: #ff007f;
+}
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Testimonials Section */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Blog Section */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.blog-card {
+    background: #2b2b2b;
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Keyframes for animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .service-grid, .testimonial-grid, .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
