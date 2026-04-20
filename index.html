@@ -1,194 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http="X-UA-Compatible" content="ie=edge">
-    <title>Shlok Yagnick's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shlok Yagnick — Machine Learning & Full Stack Developer. Interactive spatial portfolio showcasing AI, data science, and web development projects." />
+  <meta name="theme-color" content="#050505" />
+  <title>Shlok Yagnick | ML & Full Stack Developer</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Name Banner (NEW ADDITION) -->
-    <div class="top-banner">
-        <h1>Shlok Yagnick</h1>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- Background Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Background Gradient Orbs -->
+  <div class="bg-orbs">
+    <div class="bg-orb bg-orb--cyan"></div>
+    <div class="bg-orb bg-orb--violet"></div>
+    <div class="bg-orb bg-orb--magenta"></div>
+  </div>
+
+  <!-- ==================== DOCK NAVIGATION ==================== -->
+  <nav class="dock-wrapper" id="dock">
+    <div class="dock">
+      <a class="dock-link active" href="#hero" data-section="hero" id="dock-home">
+        <i class="fa-solid fa-house"></i>
+        <span class="dock-tooltip">Home</span>
+      </a>
+      <a class="dock-link" href="#about" data-section="about" id="dock-about">
+        <i class="fa-solid fa-user-astronaut"></i>
+        <span class="dock-tooltip">About</span>
+      </a>
+      <a class="dock-link" href="#experience" data-section="experience" id="dock-experience">
+        <i class="fa-solid fa-briefcase"></i>
+        <span class="dock-tooltip">Experience</span>
+      </a>
+      <a class="dock-link" href="#projects" data-section="projects" id="dock-projects">
+        <i class="fa-solid fa-rocket"></i>
+        <span class="dock-tooltip">Projects</span>
+      </a>
+      <a class="dock-link" href="#contact" data-section="contact" id="dock-contact">
+        <i class="fa-solid fa-terminal"></i>
+        <span class="dock-tooltip">Contact</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== SECTION 1: HERO ==================== -->
+  <section id="hero">
+    <div class="hero-badge glass">
+      <span class="dot"></span>
+      Available for Opportunities
     </div>
 
-    <header>
-        <nav>
-            <div class="logo">My Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li> <!-- Added Experience Link -->
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle"></div>
-        </nav>
-    </header>
+    <h1 class="hero-name" id="hero-name">
+      <!-- JS will inject animated characters -->
+    </h1>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I create elegant, responsive web solutions that bring ideas to life.</p>
-            <a href="#projects" class="btn">See My Work</a>
+    <p class="hero-subtitle" id="hero-subtitle">
+      <span class="cursor"></span>
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary" id="btn-view-work">
+        <i class="fa-solid fa-eye"></i>
+        View My Work
+      </a>
+      <a href="#contact" class="btn-ghost" id="btn-contact">
+        <i class="fa-solid fa-satellite-dish"></i>
+        Get In Touch
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: ABOUT & SKILLS ==================== -->
+  <section class="section" id="about">
+    <div class="reveal">
+      <span class="section-label">// The Orbit</span>
+      <h2 class="section-title">About & Skills</h2>
+      <p class="section-subtitle">Architecting intelligent systems at the convergence of machine learning and modern web development.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-content reveal">
+        <p>
+          I'm <span class="highlight">Shlok Yagnick</span>, a computer science student at
+          <span class="highlight">SRM Institute of Science and Technology</span>, driven by a deep passion for
+          building intelligent, scalable systems that solve real-world problems.
+        </p>
+        <p>
+          My expertise spans the full spectrum — from training ML models on massive datasets to deploying
+          production-grade web applications. I thrive at the intersection of
+          <span class="highlight">data science</span>, <span class="highlight">AI engineering</span>, and
+          <span class="highlight">full-stack development</span>, crafting end-to-end solutions that are both
+          analytically powerful and beautifully designed.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-card glass">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Internships</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Data Records</div>
+          </div>
+          <div class="stat-card glass">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Curiosity</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a web developer with a passion for creating visually stunning and highly interactive websites. With a background in full-stack development, I bring innovative design, clean code, and optimal functionality to each project. I specialize in front-end technologies such as HTML, CSS, JavaScript, and React, with a focus on delivering excellent user experiences.</p>
-    </section>
-
-    <!-- Experience Section (NEW ADDITION) -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-card">
-            <h3>Internship at Prodigy Infotech</h3>
-            <p>Currently, I am working as a <strong>Web Development Intern</strong> at <strong>Prodigy Infotech</strong>. This internship has provided me with hands-on experience in:</p>
-            <ul>
-                <li>Developing fully responsive and visually appealing websites.</li>
-                <li>Implementing animations, UI/UX improvements, and interactive features.</li>
-                <li>Optimizing website performance, SEO, and accessibility standards.</li>
-                <li>Collaborating with teams on real-world projects, improving teamwork and coding efficiency.</li>
-            </ul>
+      <div class="skills-cloud reveal">
+        <div class="skill-badge glass" data-skill="python">
+          <span class="skill-icon"><i class="fa-brands fa-python"></i></span>
+          Python
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A fully responsive personal portfolio website designed to showcase my skills and projects.</p>
-            </div>
-            <div class="project-card">
-                <h3>Weather App</h3>
-                <p>A weather forecasting app that uses the OpenWeatherMap API to provide real-time weather information.</p>
-            </div>
-            <div class="project-card">
-                <h3>AI Disaster Prediction</h3>
-                <p>Developed an AI model using machine learning to predict natural disasters based on real-time data.</p>
-            </div>
-            <div class="project-card">
-                <h3>Medical Chatbot</h3>
-                <p>Created an NLP-based chatbot for providing medical assistance and answering health-related queries.</p>
-            </div>
-            <div class="project-card">
-                <h3>Hospital Management System</h3>
-                <p>Designed a full-stack hospital management system with patient records, appointments, and admin control.</p>
-            </div>
-            <div class="project-card">
-                <h3>AI-Powered PPT & Website Generator</h3>
-                <p>An AI-powered tool that generates PowerPoint presentations and websites based on user-input topics.</p>
-            </div>
-            <div class="project-card">
-                <h3>Bio Pellet Locator</h3>
-                <p>A web app that helps locate bio-pellet suppliers to reduce air pollution caused by crop residue burning.</p>
-            </div>
-            <div class="project-card">
-                <h3>Blockchain-Based Supply Chain Tracker</h3>
-                <p>A blockchain-based system for tracking supply chains securely and ensuring transparency.</p>
-            </div>
-            <div class="project-card">
-                <h3>AI-Powered Resume Analyzer</h3>
-                <p>A resume analysis tool that uses NLP to evaluate resumes and provide improvement suggestions.</p>
-            </div>
+        <div class="skill-badge glass" data-skill="cpp">
+          <span class="skill-icon"><i class="fa-solid fa-code"></i></span>
+          C++
         </div>
-    </section>
-    
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>JavaScript</div>
-            <div>React</div>
-            <div>Node.js</div>
-            <div>Vue.js</div>
-            <div>Firebase</div>
-            <div>MongoDB</div>
-            <div>Bootstrap</div>
+        <div class="skill-badge glass" data-skill="javascript">
+          <span class="skill-icon"><i class="fa-brands fa-js"></i></span>
+          JavaScript
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Web Development</h3>
-                <p>I build responsive, SEO-optimized websites from scratch using the latest web technologies.</p>
-            </div>
-            <div class="service-card">
-                <h3>UI/UX Design</h3>
-                <p>I focus on creating clean, user-friendly designs that improve the overall user experience.</p>
-            </div>
+        <div class="skill-badge glass" data-skill="react">
+          <span class="skill-icon"><i class="fa-brands fa-react"></i></span>
+          React.js
         </div>
-    </section>
-
-    <!-- Testimonials Section (UNCHANGED) -->
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p>“Working with this developer was a pleasure. They understood our needs perfectly and delivered a stunning website that exceeded our expectations.”</p>
-                <strong>- Client A</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>“Their attention to detail and creativity really impressed us. The website they developed for us is both beautiful and functional.”</p>
-                <strong>- Client B</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>“We had a tight deadline, but they managed to complete the project on time without compromising on quality. Highly recommend!”</p>
-                <strong>- Client C</strong>
-            </div>
+        <div class="skill-badge glass" data-skill="node">
+          <span class="skill-icon"><i class="fa-brands fa-node-js"></i></span>
+          Node.js
         </div>
-    </section>
-
-    <!-- Blog Section (UNCHANGED) -->
-    <section id="blog">
-        <h2>Blog</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <h3>Understanding CSS Grid vs Flexbox</h3>
-                <p>A comprehensive guide on when to use CSS Grid and when to opt for Flexbox for modern web layouts. Learn the key differences and how they complement each other.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Best Practices for SEO in 2024</h3>
-                <p>Stay up to date with the latest SEO practices to ensure your website ranks high on search engines. Learn tips and tricks that work for modern websites.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Why React is the Best Frontend Framework</h3>
-                <p>Explore why React has become the leading frontend framework and how it can help you build scalable, performant, and maintainable web applications.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
+        <div class="skill-badge glass" data-skill="express">
+          <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+          Express.js
         </div>
-    </section>
+        <div class="skill-badge glass" data-skill="mongodb">
+          <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+          MongoDB
+        </div>
+        <div class="skill-badge glass" data-skill="pandas">
+          <span class="skill-icon"><i class="fa-solid fa-table"></i></span>
+          Pandas
+        </div>
+        <div class="skill-badge glass" data-skill="sklearn">
+          <span class="skill-icon"><i class="fa-solid fa-brain"></i></span>
+          Scikit-learn
+        </div>
+        <div class="skill-badge glass" data-skill="gis">
+          <span class="skill-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+          GIS APIs
+        </div>
+        <div class="skill-badge glass" data-skill="dataviz">
+          <span class="skill-icon"><i class="fa-solid fa-chart-line"></i></span>
+          Data Visualization
+        </div>
+        <div class="skill-badge glass" data-skill="tensorflow">
+          <span class="skill-icon"><i class="fa-solid fa-microchip"></i></span>
+          TensorFlow
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:example@example.com">shlokyagnick@gmail.com
-        </a></p>
-    </section>
+  <!-- ==================== SECTION 3: EXPERIENCE ==================== -->
+  <section class="section" id="experience">
+    <div class="reveal">
+      <span class="section-label">// The Timeline</span>
+      <h2 class="section-title">Experience Archive</h2>
+      <p class="section-subtitle">A chronicle of building, learning, and engineering solutions across organizations.</p>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Shlok Yagnick. All Rights Reserved.</p>
-    </footer>
+    <div class="timeline">
 
+      <!-- 1. NIT Rourkela -->
+      <div class="timeline-item reveal-left">
+        <div class="timeline-card glass tilt-card">
+          <div class="timeline-date">Research Intern</div>
+          <h3 class="timeline-role">Machine Learning Researcher</h3>
+          <p class="timeline-company">National Institute of Technology, Rourkela</p>
+          <p class="timeline-desc">
+            Engineered and validated ML models on datasets exceeding 10,000+ records. Built end-to-end Scikit-learn
+            pipelines for predictive analysis, feature selection, and model evaluation, contributing to published
+            research outcomes.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Python</span>
+            <span class="timeline-tag">Scikit-learn</span>
+            <span class="timeline-tag">Pandas</span>
+            <span class="timeline-tag">Research</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Experis IT -->
+      <div class="timeline-item reveal-right">
+        <div class="timeline-card glass tilt-card">
+          <div class="timeline-date">Machine Learning Intern</div>
+          <h3 class="timeline-role">Predictive Analytics Engineer</h3>
+          <p class="timeline-company">Experis IT Pvt Ltd</p>
+          <p class="timeline-desc">
+            Developed predictive analysis systems with advanced feature engineering techniques. Designed data
+            preprocessing pipelines and implemented statistical models to extract actionable business insights
+            from complex multi-dimensional datasets.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">ML</span>
+            <span class="timeline-tag">Feature Engineering</span>
+            <span class="timeline-tag">Analytics</span>
+            <span class="timeline-tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Zidio -->
+      <div class="timeline-item reveal-left">
+        <div class="timeline-card glass tilt-card">
+          <div class="timeline-date">Full Stack Developer Intern</div>
+          <h3 class="timeline-role">MERN Stack Engineer</h3>
+          <p class="timeline-company">Zidio Pvt Ltd</p>
+          <p class="timeline-desc">
+            Architected and deployed scalable MERN web applications with robust REST API ecosystems. Designed
+            intuitive user interfaces, implemented secure authentication layers, and optimized backend performance
+            for high-traffic operations.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">React.js</span>
+            <span class="timeline-tag">Node.js</span>
+            <span class="timeline-tag">MongoDB</span>
+            <span class="timeline-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Prodigy Infotech -->
+      <div class="timeline-item reveal-right">
+        <div class="timeline-card glass tilt-card">
+          <div class="timeline-date">Full Stack Developer Intern</div>
+          <h3 class="timeline-role">Frontend & Backend Developer</h3>
+          <p class="timeline-company">Prodigy Infotech</p>
+          <p class="timeline-desc">
+            Built modern JavaScript user interfaces with responsive, accessible design. Integrated frontend
+            components with backend services, ensuring seamless data flow and elegant user experiences across
+            multiple client projects.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">JavaScript</span>
+            <span class="timeline-tag">UI/UX</span>
+            <span class="timeline-tag">Backend</span>
+            <span class="timeline-tag">Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Sukh Sagar Industries -->
+      <div class="timeline-item reveal-left">
+        <div class="timeline-card glass tilt-card">
+          <div class="timeline-date">Technical Associate</div>
+          <h3 class="timeline-role">Digital Systems Manager</h3>
+          <p class="timeline-company">Sukh Sagar Industries</p>
+          <p class="timeline-desc">
+            Managed and optimized digital system infrastructure and operational workflows. Implemented
+            technology-driven solutions for process automation, inventory tracking, and cross-department
+            communication systems.
+          </p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Systems</span>
+            <span class="timeline-tag">Automation</span>
+            <span class="timeline-tag">Workflow</span>
+            <span class="timeline-tag">Management</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: PROJECTS ==================== -->
+  <section class="section" id="projects">
+    <div class="reveal">
+      <span class="section-label">// The Holo-Deck</span>
+      <h2 class="section-title">Project Arsenal</h2>
+      <p class="section-subtitle">A constellation of AI-powered platforms, data engines, and full-stack applications.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('network_tech_abstract_v2_1776701923086.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="project-title">AI-Based Network Optimization</h3>
+          <p class="project-desc">
+            Real-time load monitoring and anomaly detection powered by hybrid AI models with live dashboards.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">TensorFlow</span>
+            <span class="project-tag">WebSocket</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('water_data_abstract_1776701879875.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="project-title">Farmalytics AI Platform</h3>
+          <p class="project-desc">
+            Predictive analytics for crop yield forecasting and smart farming decision support using ML.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Scikit-learn</span>
+            <span class="project-tag">Pandas</span>
+            <span class="project-tag">React.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('water_data_abstract_1776701879875.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="project-title">Water dry Prediction</h3>
+          <p class="project-desc">
+            Machine learning forecasting engine for water scarcity using environmental datasets and climate indicators.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">ML</span>
+            <span class="project-tag">Scikit-learn</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('ai_governance_abstract_1776701895069.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <h3 class="project-title">Lake Health Monitoring</h3>
+          <p class="project-desc">
+            Data visualization platform analyzing pollution indicators and ecological trends across lake ecosystems.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Data Viz</span>
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">D3.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('network_tech_abstract_v2_1776701923086.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 class="project-title">Bio-Pellet Locator</h3>
+          <p class="project-desc">
+            GIS-based mapping system for sustainable energy resource planning and facility discovery.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">GIS APIs</span>
+            <span class="project-tag">Mapbox</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('ai_governance_abstract_1776701895069.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="project-title">Academic Decision Support</h3>
+          <p class="project-desc">
+            Data-driven resource allocation engine with structured analytics and performance tracking.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Analytics</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Express.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('network_tech_abstract_v2_1776701923086.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-chart-bar"></i>
+          </div>
+          <h3 class="project-title">Job Order Analytics</h3>
+          <p class="project-desc">
+            Operational trend dashboards and performance evaluation reporting for industrial workflows.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Pandas</span>
+            <span class="project-tag">D3.js</span>
+            <span class="project-tag">React.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('ai_governance_abstract_1776701895069.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <h3 class="project-title">MSME Sahayak Platform</h3>
+          <p class="project-desc">
+            Digital gateway for MSMEs featuring AI-powered policy insights and financial analytics tools.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">MERN Stack</span>
+            <span class="project-tag">AI</span>
+            <span class="project-tag">Finance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('water_data_abstract_1776701879875.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-table-columns"></i>
+          </div>
+          <h3 class="project-title">Excel Analytics Platform</h3>
+          <p class="project-desc">
+            Dynamic data visualization engine with automated dashboard generation and real-time chart rendering.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">D3.js</span>
+            <span class="project-tag">Chart.js</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 10 -->
+      <div class="project-card glass tilt-card reveal">
+        <div class="project-bg" style="background-image: url('ai_governance_abstract_1776701895069.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-glare"></div>
+        <div class="project-content">
+          <div class="project-icon">
+            <i class="fa-solid fa-landmark"></i>
+          </div>
+          <h3 class="project-title">Governance AI Platform</h3>
+          <p class="project-desc">
+            Administrative dashboards and operational intelligence system for government resource optimization.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">AI</span>
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: CONTACT TERMINAL ==================== -->
+  <section class="section" id="contact">
+    <div class="reveal">
+      <span class="section-label">// Contact Terminal</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">Open the terminal and run a command to reach out.</p>
+    </div>
+
+    <div class="terminal-window glass reveal">
+      <div class="terminal-header">
+        <div class="terminal-dot terminal-dot--red"></div>
+        <div class="terminal-dot terminal-dot--yellow"></div>
+        <div class="terminal-dot terminal-dot--green"></div>
+        <span class="terminal-title">shlok@developer — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="prompt">❯</span>
+          <span class="comment">// Welcome to the Shlok Yagnick terminal</span>
+        </div>
+        <div class="terminal-line">
+          <span class="prompt">❯</span>
+          <span class="comment">// Execute commands below to connect</span>
+        </div>
+        <div class="terminal-line">
+          <span class="prompt">❯</span>
+          <span>echo <span class="link">$CONTACT_INFO</span></span>
+        </div>
+        <div class="terminal-line" style="padding-left: 22px;">
+          <span>→ <span class="highlight" style="color: var(--cyan);">shlokyagnick@gmail.com</span></span>
+        </div>
+
+        <div class="terminal-commands" id="terminal-commands">
+          <button class="terminal-cmd" id="cmd-email" data-action="email">
+            <i class="fa-solid fa-copy"></i>
+            copy email
+          </button>
+          <button class="terminal-cmd" id="cmd-github" data-action="github">
+            <i class="fa-brands fa-github"></i>
+            open github
+          </button>
+          <button class="terminal-cmd" id="cmd-linkedin" data-action="linkedin">
+            <i class="fa-brands fa-linkedin"></i>
+            open linkedin
+          </button>
+          <button class="terminal-cmd" id="cmd-resume" data-action="about">
+            <i class="fa-solid fa-file-code"></i>
+            cat about.txt
+          </button>
+        </div>
+
+        <div class="terminal-output" id="terminal-output"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed & Built by <a href="#hero">Shlok Yagnick</a> — 2026</p>
+    <p style="margin-top: 6px;">Driven by Curiosity.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
